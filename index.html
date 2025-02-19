@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Wheel Effect</title>
+    <style>
+        .wheel-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .wheel {
+            width: 200px;
+            height: 200px;
+            border: 70px solid transparent;
+            border-top: 70px solid red;
+            border-right: 70px solid yellow;
+            border-bottom: 70px solid green;
+            border-left: 70px solid blue;
+            border-radius: 50%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .wheel:hover {
+            animation: spin 0.5s linear infinite;
+        }
+
+        .wheel:not(:hover) {
+            animation: spin-back 1s linear;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin-back {
+            from {
+                transform: rotate(360deg);
+            }
+            to {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wheel-container">
+        <div class="wheel"></div>
+    </div>
+</body>
+</html>
